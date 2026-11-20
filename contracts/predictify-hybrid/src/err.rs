@@ -1697,7 +1697,9 @@ impl Error {
             Error::CBOpen => "Circuit breaker is open (operations blocked)",
             Error::CBError => "Generic circuit breaker subsystem error",
             Error::RateLimitExceeded => "Rate limit exceeded; too many requests in the time window",
-            Error::NoPendingFeeCommit => "No pending fee config commit found",
+            Error::NoPendingFeeCommit => {
+                "No pending fee commit found. Call commit_fee_config first."
+            }
             Error::FeeRevealTooEarly => "Fee config reveal attempted too early",
             Error::FeePreimageMismatch => "Preimage does not match the committed hash",
             Error::DisputeStakeCapExceeded => "Dispute stake cap exceeded for this address",

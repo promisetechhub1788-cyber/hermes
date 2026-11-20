@@ -176,3 +176,11 @@ fn contract_error_codes_are_unique() {
         );
     }
 }
+
+#[test]
+fn no_pending_fee_commit_description_is_actionable() {
+    assert_eq!(
+        Error::NoPendingFeeCommit.description(),
+        "No pending fee commit found. Call commit_fee_config first."
+    );
+}
